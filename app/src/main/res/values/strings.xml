@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">PitestiTourGuide</string>
+    <array name="tabs">
+        <item>Parks</item>
+        <item>Museums</item>
+        <item>Natives</item>
+        <item>Buses</item>
+    </array>
+    <array name="natives">
+        <item>Ion Antonescu</item>
+        <item>Ion I.C. Bratianu</item>
+        <item>Armand Calinescu</item>
+    </array>
+    <array name="buses">
+        <item>Line A: Theater - Carrefour</item>
+        <item>Line 1: Tudor Vladimirescu - Novatex</item>
+        <item>Line 2: Arpechim - Bascov</item>
+        <item>Line 2B: Trivale - Arpechim</item>
+        <item>Line 3B: Razboieni - Arpechim</item>
+        <item>Line 5: Trivale - Alprom</item>
+        <item>Line 5B: Trivale - Gavana</item>
+        <item>Line 7: Gheorghe Doja - Alprom</item>
+        <item>Line 7B: Gheorghe Doja - Gavana</item>
+        <item>Line 8: Trivale - South Railway Station</item>
+        <item>Line 13: Razboieni - Alprom</item>
+        <item>Line 13B: Razboieni - Gavana</item>
+        <item>Line 19: Arpechim - Gavana</item>
+    </array>
+    <array name="museumsNames">
+        <item>Arges County Museum</item>
+        <item>Golesti Museum</item>
+    </array>
+    <array name="museumsDescriptions">
+        <item>Formally inaugurated in 1955, it is headquartered in an 1890s palace in the city center.</item>
+        <item>The museum was established in June 7, 1939 by the king Charles II.</item>
+    </array>
+    <array name="parkNames">
+        <item>Strand Park</item>
+        <item>The meadow of Arges Park</item>
+    </array>
+    <array name="parkDescriptions">
+        <item>The perfect place for picnic.</item>
+        <item>The best park in town for joggers.</item>
+    </array>
+</resources>

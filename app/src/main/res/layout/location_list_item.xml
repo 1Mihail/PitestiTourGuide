@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/locationItem">
+    <LinearLayout
+        style="@style/locationItemWrapper">
+        <ImageView
+            tools:src="@drawable/park_strand"
+            android:id="@+id/locationIV"
+            style="@style/locationImage" />
+        <TextView
+            android:id="@+id/name"
+            style="@style/locationName"
+            tools:text="Title"/>
+        <TextView
+            android:id="@+id/description"
+            style="@style/locationDescription"
+            tools:text="description"/>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
