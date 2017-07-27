@@ -20,17 +20,29 @@ public class LocationsAdapter extends ArrayAdapter<Locations> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View listItemView = convertView;
-        if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.location_list_item, parent, false);
+        ViewHolder holder;
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.location_list_item, parent, false);
+            holder = new ViewHolder();
+            holder.name = (TextView) convertView.findViewById(R.id.name);
+            holder.description = (TextView) convertView.findViewById(R.id.description);
+            holder.image = (ImageView) convertView.findViewById(R.id.locationIV);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
         Locations currentLocation = getItem(position);
-        TextView name = (TextView) listItemView.findViewById(R.id.name);
-        name.setText(currentLocation.getName());
-        TextView description = (TextView) listItemView.findViewById(R.id.description);
-        description.setText(currentLocation.getDescription());
-        ImageView image = (ImageView) listItemView.findViewById(R.id.locationIV);
-        image.setImageResource(currentLocation.getPicture());
-        return listItemView;
+        if (currentLocation != null) {
+            holder.name.setText(currentLocation.getName());
+            holder.description.setText(currentLocation.getDescription());
+            holder.image.setImageResource(currentLocation.getPicture());
+        }
+        return convertView;
+    }
+
+    private static class ViewHolder {
+        TextView name;
+        TextView description;
+        ImageView image;
     }
 }

@@ -20,15 +20,26 @@ public class NativesAdapter extends ArrayAdapter<Natives> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View listItemView = convertView;
-        if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.native_list_item, parent, false);
+        ViewHolder holder;
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.native_list_item, parent, false);
+            holder = new ViewHolder();
+            holder.name = (TextView) convertView.findViewById(R.id.name);
+            holder.image = (ImageView) convertView.findViewById(R.id.nativeIV);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
         Natives currentNative = getItem(position);
-        TextView name = (TextView) listItemView.findViewById(R.id.name);
-        name.setText(currentNative.getName());
-        ImageView image = (ImageView) listItemView.findViewById(R.id.nativeIV);
-        image.setImageResource(currentNative.getPicture());
-        return listItemView;
+        if (currentNative != null) {
+            holder.name.setText(currentNative.getName());
+            holder.image.setImageResource(currentNative.getPicture());
+        }
+        return convertView;
+    }
+
+    private static class ViewHolder {
+        TextView name;
+        ImageView image;
     }
 }
